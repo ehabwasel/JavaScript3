@@ -1,3 +1,83 @@
 /* 
   Write here your CSS rules for HackYourRepo!
 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+}
+
+#root {
+  max-width: 70vw;
+  margin: auto;
+  height: 100%;
+}
+.header {
+  background: #3f51b5;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+#list {
+  margin-left: 20px;
+  padding: 4px 2px;
+  border: 1px solid #3f51b5;
+  outline-color: #3f51b5;
+  font: inherit;
+  margin-left: 1.5rem;
+  width: 12rem;
+}
+.container {
+  margin: auto;
+}
+.main-container {
+  display: flex;
+  width: 100%;
+}
+.repo-container,
+.contributors-container {
+  width: calc(100% - 6px);
+  background-color: rgb(245, 244, 244);
+  margin: 4px;
+}
+
+@media (max-width: 768px) {
+  #root {
+    width: 100vw;
+  }
+
+  .main-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .repo-container {
+    width: calc(100% - 6px);
+  }
+
+  .contributors-container {
+    width: calc(100% - 6px);
+  }
+}
+@media (max-width: 500px) {
+  #root {
+    max-width: 100vw;
+  }
+  .header {
+    display: flex;
+  }
+  #list {
+    padding: 0;
+    margin-top: 6px;
+  }
+  .repo-container {
+    width: calc(100% - 6px);
+  }
+  .contributors-container {
+    width: calc(100% - 6px);
+  }
+}
