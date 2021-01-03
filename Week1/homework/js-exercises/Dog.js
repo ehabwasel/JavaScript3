@@ -1,6 +1,7 @@
 
 //first way with Xml 
 
+const ul=document.createElement("ul")
 function dogXML(){
 
   const xhr =new XMLHttpRequest()
@@ -13,10 +14,15 @@ function dogXML(){
     const result = xhr.response
     if(xhr.status<400){
       console.log(result)
-      const image =document.getElementById("image")
-      image.src=result.message
-      image.style.width="250px"
-      image.style.margin="150px 300px"
+      const li=document.createElement("li")
+      const img =document.createElement("img")
+      ul.appendChild(li)
+      li.appendChild(img)
+     const image =document.getElementById("image")
+     image.appendChild(ul)
+     img.src=result.message
+     img.style.width="250px"
+     img.style.margin="20px 30px"
       console.log(result.message)
   
     }
@@ -39,11 +45,18 @@ function dogAxios(){
 
   .then(function (response) {
     // handle success
-    console.log(response)
-      const image =document.getElementById("image")
-    image.src=response.data.message
-    image.style.width="250px"
-    image.style.margin="150px 300px"
+   
+    console.log(response.data)
+    
+    const li=document.createElement("li")
+    const img =document.createElement("img")
+    ul.appendChild(li)
+    li.appendChild(img)
+   const image =document.getElementById("image")
+   image.appendChild(ul)
+   img.src=response.data.message
+   img.style.width="250px"
+   img.style.margin="30px 50px"
    })
    .catch(function (error) {
   
@@ -75,3 +88,4 @@ window.onload=function(){
    }
    
  }
+ 
